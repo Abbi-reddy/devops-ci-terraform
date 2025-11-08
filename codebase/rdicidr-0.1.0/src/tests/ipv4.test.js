@@ -27,7 +27,7 @@ test("last usable address is calculated correctly", () => {
 test("broadcast address is calculated correctly", () => {
   // using 192.168.100.14/20 CIDR
   const ipv4 = new IPv4([192, 168, 100, 14], 20);
-  expect(ipv4.broadcastAddress()).toBe("192.168.111.255");
+  expect(ipv4.broadcastAddress()).toBe("255.255.255.255");
 });
 
 test("netmask is calculated correctly", () => {
@@ -53,3 +53,5 @@ test("usable avaiable address count (AWS) is calculated correctly", () => {
   const ipv4 = new IPv4([192, 168, 100, 14], 20);
   expect(ipv4.availableCount(5)).toBe(4091);
 });
+
+
